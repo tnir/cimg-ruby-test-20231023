@@ -1,4 +1,5 @@
 # https://github.com/CircleCI-Public/cimg-ruby/blob/66b68088c871293953580573189c18d5515ae6ab/README.md#L75-L97
+version: 2.1
 orbs:
   browser-tools: circleci/browser-tools@1.4.6
 jobs:
