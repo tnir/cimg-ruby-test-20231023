@@ -1,0 +1,15 @@
+# https://github.com/CircleCI-Public/cimg-ruby/blob/66b68088c871293953580573189c18d5515ae6ab/README.md#L75-L97
+orbs:
+  browser-tools: circleci/browser-tools@1.1
+jobs:
+  build:
+    docker:
+      - image: cimg/ruby:2.7-browsers
+    steps:
+      - browser-tools/install-browser-tools
+      - checkout
+      - run: |
+          ruby --version
+          node --version
+          java --version
+          google-chrome --version
