@@ -1,0 +1,10 @@
+version: 2.1
+orbs:
+  browser-tools: circleci/ruby@2.0.1
+jobs:
+  build:
+    machine:
+      image: ubuntu-2204:2023.10.1
+    steps:
+      - ruby/install:
+          version: "3.3.0-preview2"
