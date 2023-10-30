@@ -18,4 +18,5 @@ jobs:
           RUBY_PATH="$(rvm 3.3.0-preview2 1> /dev/null 2> /dev/null && rvm env --path)"
           printf '%s\n' "source $RUBY_PATH" >> "$BASH_ENV"
       - checkout
-      - ruby/install-deps
+      # ruby/install-deps
+      - run: bundle install
