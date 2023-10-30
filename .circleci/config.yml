@@ -8,7 +8,11 @@ jobs:
     steps:
       - run: sudo apt update
       - run: DEBIAN_FRONTEND=noninteractive sudo apt install openssl
-      - ruby/install:
-          version: "3.3.0-preview2"
+      # ruby/install - version: "3.3.0-preview2"
+      - run: rvm install 3.3.0-preview2
+      - run: |
+          rvm use 3.3.0-preview2
+          RUBY_PATH="$(rvm 3.3.0-preview2 1> /dev/null 2> /dev/null && rvm env --path)"
+          printf '%s\n' "source $RUBY_PATH" >> "$BASH_ENV"
       - checkout
       - ruby/install-deps
