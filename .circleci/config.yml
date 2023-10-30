@@ -7,7 +7,7 @@ jobs:
       image: ubuntu-2204:2023.10.1
     steps:
       - run: sudo apt update
-      - run: sudo apt install libssl3
+      - run: sudo apt install libssl-dev
       - ruby/install:
           version: "3.3.0-preview2"
       - checkout
