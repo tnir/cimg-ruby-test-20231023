@@ -10,7 +10,7 @@ jobs:
       - run: DEBIAN_FRONTEND=noninteractive sudo apt install rbenv
       # ruby/install - version: "3.3.0-preview2"
       - run: |
-          rbenv init
+          eval "$(rbenv init -)"
       - run: rbenv install 3.3.0-preview2
       - checkout
       # ruby/install-deps
