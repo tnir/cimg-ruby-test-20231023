@@ -7,16 +7,11 @@ jobs:
       image: ubuntu-2204:2023.10.1
     steps:
       - run: sudo apt update
-      - run: DEBIAN_FRONTEND=noninteractive sudo apt install openssl
+      - run: DEBIAN_FRONTEND=noninteractive sudo apt install rbenv
       # ruby/install - version: "3.3.0-preview2"
       - run: |
-          gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-          curl -sSL "https://get.rvm.io" | bash -s stable
-      - run: rvm install 3.3.0-preview2
-      - run: |
-          rvm use 3.3.0-preview2
-          RUBY_PATH="$(rvm 3.3.0-preview2 1> /dev/null 2> /dev/null && rvm env --path)"
-          printf '%s\n' "source $RUBY_PATH" >> "$BASH_ENV"
+          rbenv init
+      - run: rbenv install 3.3.0-preview2
       - checkout
       # ruby/install-deps
       - run: bundle install
