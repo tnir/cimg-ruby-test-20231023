@@ -7,7 +7,7 @@ jobs:
       image: ubuntu-2204:2023.10.1
     steps:
       - run: sudo apt update
-      - run: DEBIAN_FRONTEND=noninteractive sudo apt install libssl-dev
+      - run: DEBIAN_FRONTEND=noninteractive sudo apt install openssl
       - ruby/install:
           version: "3.3.0-preview2"
       - checkout
