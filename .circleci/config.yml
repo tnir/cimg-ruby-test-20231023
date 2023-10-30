@@ -9,6 +9,8 @@ jobs:
       - run: sudo apt update
       - run: DEBIAN_FRONTEND=noninteractive sudo apt install openssl
       # ruby/install - version: "3.3.0-preview2"
+      - run: |
+          curl -sSL "https://get.rvm.io" | bash -s stable
       - run: rvm install 3.3.0-preview2
       - run: |
           rvm use 3.3.0-preview2
